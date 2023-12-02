@@ -36,4 +36,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        pytest     
+    - name: Publish Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: helloworld-artifact
+        path: .
