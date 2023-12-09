@@ -14,6 +14,14 @@ strategy:
       python.version: '3.7'
 
 steps:
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'SonarCube-GitHub-Integration-1'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'srinivas-test-azure'
+    cliProjectName: 'srinivas-test-azure'
+    cliSources: '.'
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
@@ -28,3 +36,6 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
+- task: SonarQubeAnalyze@5
+  inputs:
+    jdkversion: 'JAVA_HOME_11_X64'
