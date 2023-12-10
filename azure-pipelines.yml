@@ -19,8 +19,8 @@ steps:
   inputs:
     SonarQube: 'SonarCube-GitHub-Integration-1'
     scannerMode: 'MSBuild'
-    projectKey: 'srinivas-test-azure'
-    projectName: 'srinivas-test-azure'
+    projectKey: 'CI-CD-Test-Github-10Dec'
+    projectName: 'CI-CD-Test-Github-10Dec'
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
